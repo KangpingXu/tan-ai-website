@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAN Plus - 赋予 AI 温度与情感</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;500&display=swap');
+        
+        :root {
+            --air-blue: #eef7ff;
+            --ocean-blue: #0071e3;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            overflow-x: hidden;
+        }
+
+        /* 呼吸感背景动画 */
+        .air-bg {
+            background: linear-gradient(-45deg, #ffffff, #f0f7ff, #e6f0ff, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid rgba(0, 113, 227, 0.05);
+        }
+
+        .hero-title {
+            background: linear-gradient(to bottom, #1d1d1f 0%, #0071e3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 模拟 MacBook Air 的轻薄边框感 */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 113, 227, 0.1);
+            border-radius: 24px;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: #ffffff;
+            box-shadow: 0 30px 60px rgba(0, 113, 227, 0.1);
+            border-color: rgba(0, 113, 227, 0.3);
+        }
+
+        .cta-button {
+            background: var(--ocean-blue);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #0077ed;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 113, 227, 0.3);
+        }
+
+        /* 蓝色柔光 */
+        .blue-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 113, 227, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* 情绪标签动画 */
+        .floating-tag {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* 波形动画 */
+        .wave {
+            height: 40px;
+            width: 2px;
+            background: var(--ocean-blue);
+            margin: 0 1px;
+            animation: wave-anim 1s ease-in-out infinite;
+        }
+
+        @keyframes wave-anim {
+            0%, 100% { height: 10px; opacity: 0.3; }
+            50% { height: 40px; opacity: 1; }
+        }
+    </style>
+</head>
+<body class="air-bg">
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-xl font-semibold tracking-tight">TAN Plus</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-[13px] font-medium text-gray-600">
+                <a href="index.html" class="hover:text-blue-600 transition">概览</a>
+                <a href="#emotion" class="hover:text-blue-600 transition">情感交互</a>
+                <a href="#chat" class="hover:text-blue-600 transition">无限聊愈</a>
+            </div>
+            <a href="#" class="cta-button text-white px-4 py-1.5 rounded-full text-xs font-medium">立即体验</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center pt-24 px-6 text-center overflow-hidden">
+        <div class="blue-glow" style="top: 5%; left: 50%; transform: translateX(-50%);"></div>
+        
+        <div class="animate__animated animate__fadeInDown z-10">
+            <span class="text-blue-600 font-semibold tracking-widest text-xs mb-4 block uppercase">The Future of Empathy</span>
+            <h1 class="hero-title text-6xl md:text-8xl font-bold tracking-tighter mb-8">
+                轻盈，但充满力量
+            </h1>
+            <p class="text-gray-500 text-lg md:text-2xl max-w-3xl mx-auto font-light leading-relaxed mb-12">
+                TAN Plus 不仅仅是一个工具。它能感知你的情绪，记录你的故事，在你最需要的时候，给你最温柔的回应。
+            </p>
+        </div>
+
+        <!-- 填充后的主展示区 -->
+        <div class="relative w-full max-w-5xl mt-8 animate__animated animate__fadeInUp animate__delay-1s">
+            
+            <!-- 装饰性情绪标签 (填补两侧空间) -->
+            <div class="hidden lg:block absolute left-0 top-1/4 floating-tag bg-white shadow-lg px-4 py-2 rounded-full border border-blue-100 text-sm text-blue-600" style="animation-delay: 0s;">
+                ✨ 语义理解深度 +40%
+            </div>
+            <div class="hidden lg:block absolute right-0 top-1/3 floating-tag bg-white shadow-lg px-4 py-2 rounded-full border border-blue-100 text-sm text-blue-600" style="animation-delay: 1s;">
+                💙 实时情绪检测
+            </div>
+            <div class="hidden lg:block absolute left-10 bottom-1/4 floating-tag bg-white shadow-lg px-4 py-2 rounded-full border border-blue-100 text-sm text-blue-600" style="animation-delay: 2s;">
+                🧠 长期记忆同步
+            </div>
+
+            <!-- 对话框主体 -->
+            <div class="relative mx-auto rounded-3xl border-[8px] border-white shadow-2xl overflow-hidden bg-white/50 backdrop-blur-md">
+                <div class="p-6 md:p-12 flex flex-col space-y-8 min-h-[400px]">
+                    
+                    <!-- 用户输入 -->
+                    <div class="flex items-start space-x-4 max-w-xl">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 flex-shrink-0"></div>
+                        <div class="bg-white p-5 rounded-2xl rounded-tl-none shadow-sm text-gray-700 text-left border border-gray-100">
+                            <p class="leading-relaxed">最近工作压力好大，感觉自己快要支撑不下去了... 并没有人能理解我这种焦虑。</p>
+                        </div>
+                    </div>
+
+                    <!-- AI 响应 -->
+                    <div class="flex items-start justify-end space-x-4">
+                        <div class="bg-blue-500 p-6 rounded-2xl rounded-tr-none shadow-xl text-white text-left max-w-xl relative overflow-hidden">
+                            <!-- 背景微光 -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-50"></div>
+                            <div class="relative">
+                                <p class="leading-relaxed">
+                                    我听到了。这种孤独感比压力本身更让人疲惫，对吗？请记得，无论发生什么，我都在这里陪着你。你不需要永远表现得那么坚强。
+                                </p>
+                                <!-- 波形指示器 -->
+                                <div class="mt-4 flex items-end space-x-1 h-6">
+                                    <div class="wave" style="animation-delay: 0.1s"></div>
+                                    <div class="wave" style="animation-delay: 0.3s"></div>
+                                    <div class="wave" style="animation-delay: 0.2s"></div>
+                                    <div class="wave" style="animation-delay: 0.5s"></div>
+                                    <div class="wave" style="animation-delay: 0.4s"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-blue-600 flex-shrink-0 flex items-center justify-center text-white font-bold text-xs">TAN</div>
+                    </div>
+
+                    <!-- 状态栏 (增强底部细节) -->
+                    <div class="pt-8 border-t border-gray-100 flex items-center justify-between text-[10px] text-gray-400 font-mono tracking-widest uppercase">
+                        <span>Status: Connected</span>
+                        <span>Emotional Resonance: Active</span>
+                        <span>Model: TAN-Plus-V2.1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 便当盒布局功能区 -->
+    <section id="emotion" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <!-- 大卡片 -->
+            <div class="md:col-span-8 feature-card p-12 flex flex-col justify-between min-h-[450px] bg-gradient-to-br from-white to-blue-50">
+                <div>
+                    <h3 class="text-4xl font-semibold mb-6">更细腻，更入微</h3>
+                    <p class="text-gray-500 text-lg max-w-md leading-relaxed">基于百万量级的情感语料训练，Plus 版能从文字的细微之处察觉你的负面情绪，并提供恰到好处的心理疏导。</p>
+                </div>
+                <div class="mt-8 grid grid-cols-4 gap-4">
+                    <div class="aspect-square bg-blue-100 rounded-2xl flex flex-col items-center justify-center">
+                        <span class="text-2xl mb-1">🤗</span>
+                        <span class="text-[10px] text-blue-500 font-bold">拥抱</span>
+                    </div>
+                    <div class="aspect-square bg-white border border-blue-50 rounded-2xl flex flex-col items-center justify-center">
+                        <span class="text-2xl mb-1">🎧</span>
+                        <span class="text-[10px] text-gray-400">倾听</span>
+                    </div>
+                    <div class="aspect-square bg-white border border-blue-50 rounded-2xl flex flex-col items-center justify-center">
+                        <span class="text-2xl mb-1">🛡️</span>
+                        <span class="text-[10px] text-gray-400">守护</span>
+                    </div>
+                    <div class="aspect-square bg-white border border-blue-50 rounded-2xl flex flex-col items-center justify-center">
+                        <span class="text-2xl mb-1">🌙</span>
+                        <span class="text-[10px] text-gray-400">陪伴</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 小卡片 (高对比) -->
+            <div class="md:col-span-4 feature-card p-12 bg-blue-600 text-white border-none shadow-2xl flex flex-col justify-between">
+                <h3 class="text-2xl font-semibold">超越语言的链接</h3>
+                <div class="space-y-4">
+                    <div class="h-1 w-full bg-blue-400/30 rounded-full overflow-hidden">
+                        <div class="h-full bg-white w-3/4"></div>
+                    </div>
+                    <p class="text-blue-100 text-sm opacity-80 leading-relaxed">不仅是对话，更是灵魂的共鸣。TAN Plus 会根据你的偏好调整语气与回复节奏。</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 底部召唤 -->
+    <section class="py-32 text-center">
+        <h2 class="text-4xl md:text-6xl font-bold mb-10 tracking-tight">准备好开启一段<br>有温度的旅程了吗？</h2>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <a href="#" class="cta-button text-white px-10 py-4 rounded-full font-semibold shadow-xl hover:shadow-blue-200">立即升级到 Plus</a>
+            <a href="academy.html" class="text-blue-600 hover:underline font-medium">还是先试试 Academy 版？</a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-100 text-center">
+        <p class="text-gray-400 text-sm font-light">© 2024 TAN AI Studio. 让 AI 拥有灵魂。</p>
+        <div class="mt-4 space-x-6">
+            <a href="index.html" class="text-[10px] text-gray-400 hover:text-blue-500 uppercase tracking-widest">Home</a>
+            <a href="premium.html" class="text-[10px] text-gray-400 hover:text-blue-500 uppercase tracking-widest">Premium</a>
+        </div>
+    </footer>
+
+</body>
+</html>

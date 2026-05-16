@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAN Academy - 开启你的智慧之门</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .imac-gradient-bg {
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            position: relative;
+        }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%) rotate(0deg); }
+            to { transform: translate(20%, 20%) rotate(360deg); }
+        }
+
+        .card-pop {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-pop:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+                TAN Academy
+            </div>
+            <div class="space-x-8 text-sm font-medium text-gray-600">
+                <a href="index.html" class="hover:text-blue-500 transition">返回官网</a>
+                <a href="#features" class="hover:text-blue-500 transition">功能</a>
+                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition">立即试用</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden imac-gradient-bg">
+        <!-- 装饰背景球 -->
+        <div class="blob bg-pink-200" style="top: -100px; left: -100px;"></div>
+        <div class="blob bg-yellow-100" style="bottom: -100px; right: -100px; animation-delay: -5s;"></div>
+        <div class="blob bg-blue-100" style="top: 20%; right: 10%; animation-delay: -10s;"></div>
+
+        <div class="relative z-10 text-center px-6">
+            <h1 class="animate__animated animate__fadeInUp text-5xl md:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
+                学习，本该<span class="text-orange-500">五彩缤纷</span>。
+            </h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s text-xl text-gray-500 max-w-2xl mx-auto mb-10">
+                TAN Academy 是你最贴心的全科学习伙伴。无论是复杂的函数，还是深奥的文学，我们用最简单的语言为你拆解。
+            </p>
+            <div class="animate__animated animate__fadeInUp animate__delay-2s flex flex-wrap justify-center gap-4">
+                <a href="#subjects" class="px-8 py-4 bg-gray-900 text-white rounded-full font-bold hover:bg-gray-800 transition shadow-lg">开始探索</a>
+                <a href="index.html#academy" class="px-8 py-4 border-2 border-gray-200 text-gray-900 rounded-full font-bold hover:bg-gray-50 transition">了解版本差异</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能展示区 -->
+    <section id="subjects" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">全科覆盖，一网打尽</h2>
+                <p class="text-gray-500">从基础教育到兴趣探索，Academy 陪你一起成长。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- 数理化卡片 -->
+                <div class="card-pop p-10 rounded-[3rem] bg-blue-50 border border-blue-100">
+                    <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-white text-3xl mb-8 shadow-lg shadow-blue-200">
+                        ∑
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">理科之光</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        告别枯燥的公式。TAN Academy 会通过交互式演示，帮你直观理解物理规律和数学逻辑。
+                    </p>
+                </div>
+
+                <!-- 语言卡片 -->
+                <div class="card-pop p-10 rounded-[3rem] bg-green-50 border border-green-100">
+                    <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center text-white text-3xl mb-8 shadow-lg shadow-green-200">
+                        文
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">语言天才</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        多语种实时陪练，纠正你的发音，提升你的词汇量，让你在交流中自然掌握新语言。
+                    </p>
+                </div>
+
+                <!-- 艺术卡片 -->
+                <div class="card-pop p-10 rounded-[3rem] bg-purple-50 border border-purple-100">
+                    <div class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center text-white text-3xl mb-8 shadow-lg shadow-purple-200">
+                        🎨
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">艺术探索</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        赏析名画、理解乐理。Academy 激发你的创造潜能，陪你发现世界的美。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 极简工具展示 -->
+    <section class="py-24 imac-gradient-bg">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-block p-1 px-4 mb-6 rounded-full bg-orange-100 text-orange-600 text-sm font-bold">
+                SIMPLE & POWERFUL
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-12">极其简单，上手即用</h2>
+            
+            <div class="relative bg-white rounded-[2rem] shadow-2xl p-4 md:p-8 border border-gray-100 animate__animated animate__zoomIn">
+                <!-- 模拟界面 -->
+                <div class="flex items-center space-x-2 mb-6 border-b pb-4">
+                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                    <div class="ml-4 text-xs text-gray-400 font-mono">tan-academy-v1.0.exe</div>
+                </div>
+                <div class="space-y-4 text-left">
+                    <div class="bg-gray-50 p-4 rounded-xl text-gray-700 italic">“Tan，帮我解释一下什么是广义相对论？”</div>
+                    <div class="bg-blue-500 p-4 rounded-xl text-white ml-12">
+                        “想象一下，时空是一张巨大的蹦蹦床，而质量巨大的物体就像是在床中央放了一个铅球...”
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-gray-700 italic">“哇，瞬间懂了！那帮我出一道练习题吧。”</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-white border-t border-gray-100 text-center">
+        <div class="text-3xl font-bold text-gray-300 mb-8">TAN Academy</div>
+        <div class="flex justify-center space-x-6 mb-10">
+            <a href="plus.html" class="text-blue-500 hover:underline">去 Plus 版看看 →</a>
+            <a href="premium.html" class="text-purple-500 hover:underline">去 Premium 版看看 →</a>
+        </div>
+        <p class="text-gray-400 text-sm">© 2024 TAN AI Studio. 所有的知识都值得被热爱。</p>
+    </footer>
+
+</body>
+</html>

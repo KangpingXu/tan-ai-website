@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAN Premium - 定义你的灵魂伴侣</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Noto+Sans+SC:wght@100;300;500;700&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+        .pro-gradient { background: radial-gradient(circle at 50% 30%, #1a1033 0%, #000000 70%); }
+        .glow-text { text-shadow: 0 0 40px rgba(168, 85, 247, 0.4); }
+        .hero-title { line-height: 1.25; letter-spacing: -0.01em; display: inline-block; }
+        .pro-card { background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(40px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 40px; }
+        @keyframes loading { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
+    </style>
+</head>
+<body class="pro-gradient min-h-screen flex flex-col items-center">
+    <nav class="w-full p-8 flex justify-between items-center border-b border-white/5">
+        <span class="text-xl font-bold uppercase tracking-tighter">Tan Premium</span>
+        <a href="index.html" class="text-xs text-gray-500 border border-white/10 px-4 py-1 rounded-full">返回主页</a>
+    </nav>
+
+    <section class="flex flex-col items-center text-center pt-32 px-6">
+        <div class="inline-block px-4 py-1.5 mb-10 rounded-full border border-purple-500/20 bg-purple-500/5 text-[10px] font-mono text-purple-400 uppercase tracking-widest">
+            Neural Kernel v4.0.2 Development Stage
+        </div>
+        
+        <h1 class="hero-title text-6xl md:text-8xl font-bold tracking-tighter mb-10">
+            深邃<br><span class="glow-text text-purple-500">不可思议</span>
+        </h1>
+        
+        <p class="text-gray-400 text-lg max-w-xl mb-16 font-light">
+            TAN Premium目前处于邀请制封闭测试阶段*
+        </p>
+
+        <div class="flex flex-col items-center space-y-4">
+            <div class="text-2xl font-bold tracking-widest animate-pulse">
+                即将推出 <span class="text-sm font-light text-gray-500 italic">COMING SOON</span>
+            </div>
+            <div class="w-48 h-1 bg-white/5 rounded-full overflow-hidden relative">
+                <div class="h-full bg-purple-500 w-1/3 rounded-full absolute" style="animation: loading 2s ease-in-out infinite;"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mt-32 w-full max-w-4xl p-10 pro-card opacity-30 grayscale text-center">
+        <p class="text-xs font-mono text-gray-500">内核组件加载中...</p>
+    </div>
+</body>
+</html>
